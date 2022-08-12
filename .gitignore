@@ -1,0 +1,7 @@
+# Folders ignore
+.idea
+
+# Files ignore
+SeleniumCourse.iml
+# Project exclude paths
+/target/
