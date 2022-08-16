@@ -17,7 +17,7 @@ public class LessonOne extends BaseTests {
                 .selectSubMenuByText("Командировки")
                 .createTrip()
                 .checkHeader()
-                .selectUnit("Research & Development")
+                .selectUnit("Research & Developmente")
                 .selectCompany("(Edge) Призрачная Организация Охотников")
                 .enableCheckbox("Заказ билетов")
                 .fillField("Город прибытия", "Уфа")
