@@ -1,11 +1,13 @@
 package ru.ibs.tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import ru.ibs.tests.base.BaseTests;
 
 public class LessonOne extends BaseTests {
 
     @Test
+    @DisplayName("Создать командировку без указания командируемых сотрудников")
     public void createTripWithoutEmployees() {
 
         // пройти авторизацию

@@ -44,7 +44,7 @@ public class MainPage extends BasePage {
                 return pageManager.getMainPage();
             }
         }
-        Assert.fail("Меню с текстом " + nameMenu + "не найдено на странице");
+        Assert.fail("Меню с текстом " + nameMenu + " не найдено на странице");
         return pageManager.getMainPage();
     }
 
@@ -56,7 +56,7 @@ public class MainPage extends BasePage {
                 return pageManager.getMainPage();
             }
         }
-        Assert.fail("Меню с текстом " + nameSubMenu + "не найдено на странице");
+        Assert.fail("Меню с текстом " + nameSubMenu + " не найдено на странице");
         return pageManager.getMainPage();
     }
 

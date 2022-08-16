@@ -89,7 +89,7 @@
                     <properties>
                         <property>
                             <name>listener</name>
-                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                            <value>ru.ibs.framework.utils.MyAllureListener</value>
                         </property>
                     </properties>
                 </configuration>
@@ -120,7 +120,7 @@
                         <id>allure-plugin</id>
                         <phase>install</phase>
                         <goals>
-                            <goal>report</goal>
+                            <goal>serve</goal>
                         </goals>
                     </execution>
                 </executions>
