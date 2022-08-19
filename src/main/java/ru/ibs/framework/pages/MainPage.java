@@ -22,21 +22,18 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//*[@title=\"Создать командировку\"]")
     private WebElement creatingTrip;
 
-    @Step ("Проверить наличие заголовка \"Панель быстрого запуска\"")
     public MainPage checkOpenPage() {
         waitUntilElementToBeVisible(header);
         Assert.assertEquals("Панель быстрого запуска", header.getText());
         return pageManager.getMainPage();
     }
 
-    @Step ("Нажать на кнопку \"Создать командировку\"")
     public TripCreatingPage createTrip() {
         waitUntilElementToBeClickable(creatingTrip);
         creatingTrip.click();
         return pageManager.getTripCreatingPage();
     }
 
-    @Step ("Выбрать пункт меню '{nameMenu}'")
     public MainPage selectBaseMenuByText(String nameMenu) {
         for (WebElement itemMenu : listBaseMenu) {
             if (itemMenu.getText().contains(nameMenu)) {
@@ -48,7 +45,6 @@ public class MainPage extends BasePage {
         return pageManager.getMainPage();
     }
 
-    @Step ("Выбрать пункт подменю '{nameSubMenu}'")
     public MainPage selectSubMenuByText(String nameSubMenu) {
         for (WebElement itemMenu : listSubMenu) {
             if (itemMenu.getText().contains(nameSubMenu)) {

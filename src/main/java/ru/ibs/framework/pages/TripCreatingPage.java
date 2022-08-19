@@ -46,14 +46,12 @@ public class TripCreatingPage extends BasePage {
     @FindBy(xpath = "//span[@class='validation-failed']")
     private WebElement errorField;
 
-    @Step("Проверить отображение заголовка")
     public TripCreatingPage checkHeader() {
         Assert.assertTrue("Страница не загрузилась", creatingTrip.isDisplayed());
         Assert.assertEquals("Создать командировку", creatingTrip.getText());
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Выбрать отдел '{unitName}'")
     public TripCreatingPage selectUnit(String unitName) {
         units.click();
         for (WebElement itemMenu : unitsList) {
@@ -67,7 +65,6 @@ public class TripCreatingPage extends BasePage {
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Выбрать организацию '{companyName}'")
     public TripCreatingPage selectCompany(String companyName) {
         companyListOpening.click();
         dropDownCompanyList.click();
@@ -82,7 +79,6 @@ public class TripCreatingPage extends BasePage {
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Активировать чекбокс '{checkboxName}'")
     public TripCreatingPage enableCheckbox(String checkboxName) {
         for (WebElement itemMenu : checkboxes) {
             if (itemMenu.getText().contains(checkboxName)) {
@@ -95,7 +91,6 @@ public class TripCreatingPage extends BasePage {
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Заполнить поле '{nameField}' значением '{value}'")
     public TripCreatingPage fillField(String nameField, String value) {
         WebElement element = null;
         switch (nameField) {
@@ -123,13 +118,11 @@ public class TripCreatingPage extends BasePage {
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Нажать на \"Сохранить и закрыть\"")
     public TripCreatingPage saveAndClose() {
         saveAndCloseBtn.click();
         return pageManager.getTripCreatingPage();
     }
 
-    @Step("Проверить отображение текста ошибки")
     public TripCreatingPage checkErrorMessage() {
         waitUntilElementToBeVisible(errorField);
         Assert.assertEquals("Список командируемых сотрудников не может быть пустым", errorField.getText());
