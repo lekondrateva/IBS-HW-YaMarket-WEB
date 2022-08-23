@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.ibs.framework.utils.PropConst;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class DriverManager {
 
@@ -39,8 +39,8 @@ public class DriverManager {
             driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public void quitDriver() {

@@ -9,13 +9,15 @@ import ru.ibs.framework.managers.DriverManager;
 import ru.ibs.framework.managers.PageManager;
 import ru.ibs.framework.managers.TestPropManager;
 
+import java.time.Duration;
+
 public class BasePage {
 
     protected DriverManager driverManager = DriverManager.getInstance();
     protected PageManager pageManager = PageManager.getInstance();
     protected TestPropManager propManager = TestPropManager.getInstance();
 
-    protected WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), 10, 1000);
+    protected WebDriverWait wait = new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(10), Duration.ofSeconds(1));
 
     public BasePage () {
         PageFactory.initElements(driverManager.getDriver(), this);
