@@ -1,6 +1,7 @@
 package ru.ibs.framework.utils;
 
 public class PropConst {
+    public static final String BASE_YA_URL = "base.ya.url";
     public static final String BASE_URL = "base.url";
 
     public static final String LOGIN = "login";

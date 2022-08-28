@@ -77,6 +77,11 @@
             <version>${junit.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.13.6</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -94,6 +99,12 @@
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                         -Dcucumber.options="--plugin io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"
                     </argLine>
+                    <properties>
+                        <name>
+                            listener
+                        </name>
+                        <value>ru.ibs.framework.utils.MyAllureListener</value>
+                    </properties>
                 </configuration>
                 <dependencies>
                     <dependency>

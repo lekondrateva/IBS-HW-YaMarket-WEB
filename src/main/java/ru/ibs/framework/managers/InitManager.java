@@ -1,6 +1,6 @@
 package ru.ibs.framework.managers;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import static ru.ibs.framework.utils.PropConst.IMPLICITLY_WAIT;
 import static ru.ibs.framework.utils.PropConst.PAGE_LOAD_TIMEOUT;
@@ -14,13 +14,17 @@ public class InitManager {
 
         driverManager.getDriver().manage().window().maximize();
         driverManager.getDriver().manage().timeouts()
-                .implicitlyWait(Integer.parseInt(props.getProperty(IMPLICITLY_WAIT)), TimeUnit.SECONDS);
+                .implicitlyWait(Duration.ofSeconds(Integer.parseInt(props.getProperty(IMPLICITLY_WAIT))));
         driverManager.getDriver().manage().timeouts()
-                .pageLoadTimeout(Integer.parseInt(props.getProperty(PAGE_LOAD_TIMEOUT)), TimeUnit.SECONDS);
+                .pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(props.getProperty(PAGE_LOAD_TIMEOUT))));
     }
 
     public static void quitFramework() {
         driverManager.quitDriver();
+    }
+
+    public static void closeFramework() {
+        driverManager.closeDriver();
     }
 
 }

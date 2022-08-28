@@ -1,37 +1,16 @@
 package ru.ibs.framework.managers;
 
-import ru.ibs.framework.pages.LoginPage;
-import ru.ibs.framework.pages.MainPage;
-import ru.ibs.framework.pages.TripCreatingPage;
+import ru.ibs.framework.pages.ExtendedFiltersPage;
+import ru.ibs.framework.pages.YaMarketPage;
+import ru.ibs.framework.pages.YaPage;
 
 public class PageManager {
 
     private static PageManager INSTANCE = null;
 
-    private LoginPage loginPage;
-    private MainPage mainPage;
-    private TripCreatingPage tripCreatingPage;
-
-    public LoginPage getLoginPage() {
-        if (loginPage == null) {
-            loginPage = new LoginPage();
-        }
-        return loginPage;
-    }
-
-    public MainPage getMainPage() {
-        if (mainPage == null) {
-            mainPage = new MainPage();
-        }
-        return mainPage;
-    }
-
-    public TripCreatingPage getTripCreatingPage() {
-        if (tripCreatingPage == null) {
-            tripCreatingPage = new TripCreatingPage();
-        }
-        return tripCreatingPage;
-    }
+    private YaPage yaPage;
+    private YaMarketPage yaMarketPage;
+    private ExtendedFiltersPage extendedFiltersPage;
 
     private PageManager() {
     }
@@ -42,4 +21,26 @@ public class PageManager {
         }
         return INSTANCE;
     }
+
+    public YaPage getYaPage() {
+        if (yaPage == null) {
+            yaPage = new YaPage();
+        }
+        return yaPage;
+    }
+
+    public YaMarketPage getYaMarketPage() {
+        if (yaMarketPage == null) {
+            yaMarketPage = new YaMarketPage();
+        }
+        return yaMarketPage;
+    }
+
+    public ExtendedFiltersPage getExtendedFiltersPage() {
+        if (extendedFiltersPage == null) {
+            extendedFiltersPage = new ExtendedFiltersPage();
+        }
+        return extendedFiltersPage;
+    }
+
 }
