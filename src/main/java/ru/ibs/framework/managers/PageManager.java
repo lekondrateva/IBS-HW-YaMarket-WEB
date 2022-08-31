@@ -43,4 +43,9 @@ public class PageManager {
         return extendedFiltersPage;
     }
 
+    public static PageManager deleteInstance() {
+        INSTANCE = null;
+        return INSTANCE;
+    }
+
 }

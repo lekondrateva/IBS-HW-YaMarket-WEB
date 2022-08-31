@@ -48,6 +48,7 @@ public class DriverManager {
             driver.quit();
             driver = null;
         }
+        PageManager.deleteInstance();
     }
 
     public void closeDriver() {

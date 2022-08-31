@@ -14,6 +14,14 @@ public class YaPage extends BaseYaPage{
 
     public YaPage getUrl() {
         driverManager.getDriver().get(propManager.getProperty(PropConst.BASE_YA_URL));
+        String originalHandle = driverManager.getDriver().getWindowHandle();
+        for(String handle : driverManager.getDriver().getWindowHandles()) {
+            if (!handle.equals(originalHandle)) {
+                driverManager.getDriver().switchTo().window(handle);
+                driverManager.getDriver().close();
+            }
+        }
+        driverManager.getDriver().switchTo().window(originalHandle);
         return pageManager.getYaPage();
     }
 
